@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: docker-in-docker
+spec:
+  containers:
+  - name: docker-in-docker
+    image: gmaresca/docker-in-docker:latest
+    args:
+    - docker
+    - run
+    - hello-world
+    securityContext:
+      privileged: true
